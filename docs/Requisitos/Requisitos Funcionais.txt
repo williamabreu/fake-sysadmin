@@ -1,0 +1,88 @@
+Requisitos Funcionais
+---------------------
+
+1. O administrador do sistema deve cadastrar os usuários do sistema
+    
+    1.1. O software deve exigir o cadastro de nome completo do usuário
+    1.2. O software deve exigir o cadastro do CPF do usuário
+    1.3. O software deve exigir o cadastro do RG do usuário
+    1.4. O software deve exigir o cadastro da data de nascimento do usuário
+    1.5. O software deve exigir o cadastro do endereço do usuário
+    1.6. O software deve exigir o cadastro de um nome de usuário alfanumérico
+        1.6.1. O software deve garantir nome de usuários únicos
+    1.7. O software deve exigir o cadastro de uma senha
+
+
+2. O usuário deve ser autenticado no sistema
+
+    2.1. O software deve exigir a inserção do nome de usuário
+    2.2. O software deve exigir a inserção da senha
+
+
+3. O atendente deve ser capaz de cadastrar um novo cliente
+
+    3.1. O software deve exigir o cadastro de nome completo do cliente
+    3.2. O software deve exigir o cadastro do CPF do cliente
+    3.3. O software deve exigir o cadastro do RG do cliente
+    3.4. O software deve exigir o cadastro da data de nascimento do cliente
+    3.5. O software deve exigir o cadastro do endereço do cliente
+    3.6. O software deve exigir o cadastro do plano de assinatura do cliente
+
+
+4. O atendente deve ser capaz de agendar instalação para um novo cliente
+
+    4.1. O software deve exigir a inserção do cliente atendido
+    4.2. O software deve exigir a data da instalação
+    4.3. O software deve exigir a hora da instalação
+    4.4. O software não pode permitir que agendamentos colidam
+
+
+5. O atendente deve ser capaz de agendar suporte técnico para um cliente
+
+    5.1. O software deve exigir a inserção do cliente atendido
+    5.2. O software deve exigir a data do suporte
+    5.3. O software deve exigir a hora do suporte
+    5.4. O software não pode permitir que agendamentos colidam
+
+
+6. O atendente deve ser capaz de modificar os dados cadastrais de um cliente
+
+
+7. O atendente deve ser capaz de modificar o plano de assinatura de um cliente
+
+
+8. O atendente deve ser capaz de cancelar a assinatura de um cliente
+
+
+9. O atendente deve ser capaz de validar o pagamento de um cliente
+
+
+10. O gerente de infraestrutura deve ser capaz de cadastrar componentes da rede 
+
+    10.1. O software deve permitir o cadastro de roteadores
+    10.2. O software deve permitir o cadastro de switches
+    10.3. O software deve permitir o cadastro de CPE
+    10.4. O software deve permitir o cadastro de relacionamentos entre os componentes da rede
+
+
+11. O gerente de infraestrutura deve ser capaz de modificar componentes da rede 
+
+    11.1. O software deve permitir a modificação de roteadores
+    11.2. O software deve permitir a modificação de switches
+    11.3. O software deve permitir a modificação de CPE
+    11.4. O software deve permitir a modificação de relacionamentos entre os componentes da rede
+
+
+12. O gerente de infraestrutura deve ser capaz de gerar lista de suporte técnico agendado
+
+    12.1. O software deve permitir fazer filtragem por data
+    12.2. O software deve permitir fazer filtragem por hora
+    12.3. O software deve permitir fazer busca pelo cliente
+
+
+13. O administrador financeiro deve ser capaz de gerar fatura de cobrança para os clientes
+
+
+14. O administrador financeiro deve ser capaz de gerar relatório de movimentação financeira
+
+    14.1. O software deve permitir fazer filtragem por data
