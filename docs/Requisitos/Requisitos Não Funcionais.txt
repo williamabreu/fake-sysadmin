@@ -1,0 +1,12 @@
+Requisitos Não Funcionais
+-------------------------
+
+1. O servidor WEB do software deve ser compatível com VM Linux
+
+2. O cliente WEB do software deve ser compatível com Mozilla Firefox mais recente
+    2.1. O software deve funcionar à resolução mínima 1024x768
+    2.2. O software deve funcionar em plataforma desktop
+
+3. A conexão HTTP deve ser criptograda
+
+4. Senhas de usuário devem ser salvas em HASH
