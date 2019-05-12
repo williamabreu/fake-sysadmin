@@ -86,3 +86,11 @@ Requisitos Funcionais
 14. O administrador financeiro deve ser capaz de gerar relatório de movimentação financeira
 
     14.1. O software deve permitir fazer filtragem por data
+
+
+15. O administrador financeiro deve ser capaz de cadastrar um plano de assinatura
+
+    15.1. O software deve exigir o cadastro do nome do plano
+    15.2. O software deve exigir o cadastro do valor do plano
+
+16. O administrador financeiro deve ser capaz de modificar um plano de assinatura
