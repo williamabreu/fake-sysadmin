@@ -7,6 +7,6 @@ Requisitos Não Funcionais
     2.1. O software deve funcionar à resolução mínima 1024x768
     2.2. O software deve funcionar em plataforma desktop
 
-3. A conexão HTTP deve ser criptograda
+3. A conexão HTTP deve ser criptografada
 
 4. Senhas de usuário devem ser salvas em HASH
