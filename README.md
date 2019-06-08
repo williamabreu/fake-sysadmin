@@ -96,3 +96,16 @@ Convenções de notação são aplicadas a qualquer código, pois envolvem a sem
 - Não se deve utilizar nomes demasiadamente abreviados. Abreviaturas aceitáveis deverão ser explicitamente comentadas. Nomes referenciando expressões matemáticas, se utilizados, também devem ser devidamente comentados.
 - Todos os nomes criados deverão ser escritos em inglês para manter padrão de idioma com a API da linguagem/framework.
 - Todos os comentários deverão ser escritos em português, para facilitar a leitura e a escrita.
+
+-------------------------------
+
+## Padrões de Projeto
+
+Os padrões de projeto aplicados ao framework Django podem ser consultados no livro "Django Design Patterns and Best Practices" ```[1]```.
+
+```[1]``` RAVINDRAN, Arun. _Django Design Patterns and Best Practices_: 2. ed. Birmingham: Packt Publishing, 2015. ISBN 978-1-78398-664-4.
+
+[//]: # (Link para compra do livro:)
+[//]: # (https://www.packtpub.com/web-development/django-design-patterns-and-best-practices-second-edition)
+[//]: # (Link para download gratuito do livro:)
+[//]: # (https://docplayer.net/53000043-Django-design-patterns-and-best-practices.html)
