@@ -10,6 +10,9 @@ Sistema integrado para gerência de provedor de internet
 - Python 3.7
 - Django 2.2
 - SQLite 3
+- HTML 5
+- CSS 3
+- Bootstrap 4
 
 -------------------------------
 
@@ -61,3 +64,35 @@ Outros parágrafos vêm depois de linhas em branco:
 - Utilizar números de versão no formato ```X.Y``` .
 - Incrementar somente o número Y da versão quando corrigir um bug.
 - Incrementar o número X e zerar o Y quando lançar uma nova versão a partir de novos requisitos.
+
+-------------------------------
+
+## Regras de Codificação
+
+Como o projeto será codificado nas linguagens Python, HTML e CSS, devem ser seguidas as convenções amplamente aceitas pelo mercado atual, isto é, convenções defindas pela Python Foundation e pela W3C. 
+
+Também devem ser seguidas convenções de documentação de código, que devem ser seguidas somente no código de back-end (Python).
+
+Convenções de notação são aplicadas a qualquer código, pois envolvem a semântica dos identificadores.
+
+### Convenções de codificação
+
+- [Convenções oficiais de codificação em Python, PEP 8](https://www.python.org/dev/peps/pep-0008/)
+- [Convenções definidas pelo Google para HTML/CSS](https://google.github.io/styleguide/htmlcssguide.html)
+
+### Convenções de documentação de código
+
+- [Convenções de docstrings em Python, PEP 257](https://www.python.org/dev/peps/pep-0257/)
+
+### Convenções de notação
+
+- Nomes de classes, estruturas e correlatos devem ser um substantivo concreto ou abstrato.
+- Nomes de constantes devem ser um substantivo concreto ou abstrato.
+- Nomes de atributos e variáveis devem ser um substantivo concreto ou abstrato.
+- Métodos, funções e procedimentos devem ser um verbo no imperativo, indicando ação.
+- Ao utilizar siglas para nomes, esta deverá ser escrita em caixa alta. O restante do nome deve seguir a regra aplicável a ele.
+- Os nomes devem ser suficientemente sugestivos, deixando explícito seu propósito de uso.
+- Nomes devem seguir a codificação ASCII (7 bits) e devem ter no máximo 31 caracteres.
+- Não se deve utilizar nomes demasiadamente abreviados. Abreviaturas aceitáveis deverão ser explicitamente comentadas. Nomes referenciando expressões matemáticas, se utilizados, também devem ser devidamente comentados.
+- Todos os nomes criados deverão ser escritos em inglês para manter padrão de idioma com a API da linguagem/framework.
+- Todos os comentários deverão ser escritos em português, para facilitar a leitura e a escrita.
