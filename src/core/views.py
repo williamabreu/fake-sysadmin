@@ -16,6 +16,11 @@ def create_plan(request):
         plan.save()
         return redirect('create_plan')
 
+def list_all_plans(request):
+    if request.method == 'GET':
+        plans = models.Plan.objects.all()
+        return render(request, 'site/list_all_plans.html', context={'plans': plans})
+
 def update_plan(request, id):
     plan = models.Plan.objects.get(id=id)
     
