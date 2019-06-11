@@ -27,3 +27,9 @@ def update_plan(request, id):
         plan.price = request.POST['price']
         plan.save()
         return redirect('update_plan', id=id)
+
+def delete_plan(request, id):
+    if request.method == 'GET':
+        plan = models.Plan.objects.get(id=id)
+        plan.delete()
+        return HttpResponse('Plano {} excluído.'.format(plan.plan_name))
