@@ -18,6 +18,19 @@ Sistema integrado para gerência de provedor de internet
 
 ## Regras de Uso do GIT
 
+## Organização do Repositório
+
+```
+.
+├─── docs          # Contém artefatos de docuementação do software
+|
+└─── src           # Contém código-fonte do software
+     |
+     ├─── core      # Contém código-fonte de implementação do software
+     |
+     └─── sysadmin  # Contém código-fonte de configuração do framework
+```
+
 ### Gitignore
 
 - O arquivo ```.gitignore``` é um item de configuração do software
