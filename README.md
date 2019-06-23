@@ -27,7 +27,7 @@ Sistema integrado para gerência de provedor de internet
   - arquivos temporários
   - qualquer outro artefato que não componha documentação ou código-fonte do software
 
-### Commit
+### Commits
 
 - Um commit deve ter o seguinte formato:
 
@@ -94,8 +94,6 @@ Convenções de notação são aplicadas a qualquer código, pois envolvem a sem
 - Os nomes devem ser suficientemente sugestivos, deixando explícito seu propósito de uso.
 - Nomes devem seguir a codificação ASCII (7 bits) e devem ter no máximo 31 caracteres.
 - Não se deve utilizar nomes demasiadamente abreviados. Abreviaturas aceitáveis deverão ser explicitamente comentadas. Nomes referenciando expressões matemáticas, se utilizados, também devem ser devidamente comentados.
-- Todos os nomes criados deverão ser escritos em inglês para manter padrão de idioma com a API da linguagem/framework.
-- Todos os comentários deverão ser escritos em português, para facilitar a leitura e a escrita.
 
 -------------------------------
 
