@@ -1,0 +1,23 @@
+{% extends 'site/base.html' %}
+
+{% block body %}
+  <h2>Administrador Financeiro</h2>
+  <h1>Planos de assinatura</h1>
+
+  <a href="{% url 'create_plan' %}">Adicionar Novo</a>
+
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Valor</th>
+    </tr>
+    {% for plan in plans %}
+      <tr>
+        <td>{{ plan.plan_name }}</td>
+        <td>{{ plan.price }}</td>
+        <td><a href="{% url 'update_plan' plan.id %}">Modificar</a></td>
+        <td><a href="{% url 'delete_plan' plan.id %}">Excluir</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock body %}

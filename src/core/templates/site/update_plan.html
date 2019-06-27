@@ -1,0 +1,17 @@
+{% extends 'site/base.html' %}
+
+{% block body %}
+  <h2>Administrador Financeiro</h2>
+  <h1>Plano de assinatura</h1>
+
+  <form method="POST" action="{% url 'update_plan' plan.id %}">
+    {% csrf_token %}
+    <label for="name">Nome:</label>
+    <input id="name" name="name" type="text" value="{{ plan.plan_name }}">
+
+    <label for="price">Valor:</label>
+    <input id="price" name="price" type="text" value="{{ plan.price }}">
+
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock body %}
