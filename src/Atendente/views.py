@@ -64,3 +64,16 @@ def update_client(request, id):
     if request.method == 'GET':
         plans = models.Plan.objects.all()
         return render(request, 'site/update_client.html', context={'client': client, 'plans': plans})
+
+    if request.method == 'POST':
+        contract = models.Contract()
+        contract.subscription_date = datetime.now()
+        contract.plan = models.Plan.objects.get(id=int(request.POST['plan']))
+        contract.save()
+
+        client.contract.delete()
+
+        client.contract = contract
+        client.save()
+
+        return redirect('update_client', id=id)
