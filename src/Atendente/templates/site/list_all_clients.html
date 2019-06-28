@@ -1,0 +1,26 @@
+{% extends 'site/base.html' %}
+
+{% block body %}
+<h2>Atendente</h2>
+<h1>Clientes</h1>
+
+  <a href="{% url 'create_client' %}">Cadastrar Novo Cliente</a>
+
+  <table>
+    <tr>
+      <th>Cliente</th>
+      <th>CPF</th>
+    </tr>
+    {% for client in clients %}
+      <tr>
+        <td>{{ client.person.name }}</td>
+        <td>{{ client.person.cpf }}</td>
+        {% comment %}
+          <td><a href="{% url 'update_client' client.id %}">
+            Editar dados cadastrais
+          </a></td>
+        {% endcomment %}
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock body %}

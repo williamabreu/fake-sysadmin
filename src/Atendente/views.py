@@ -44,3 +44,15 @@ def create_client(request):
         client.save()
         
         return redirect('create_client')
+
+
+def list_all_clients(request):
+    """
+    Lista todos os Clientes cadastrados na base de dados (READ).
+
+    :param request: Requisição HTTP processada do Django
+    :return: Página HTML de listagem de clientes
+    """
+    if request.method == 'GET':
+        clients = models.Client.objects.all()
+        return render(request, 'site/list_all_clients.html', context={'clients': clients})
