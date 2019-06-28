@@ -7,7 +7,7 @@
   <form method="POST" action="{% url 'update_plan' plan.id %}">
     {% csrf_token %}
     <label for="name">Nome:</label>
-    <input id="name" name="name" type="text" value="{{ plan.plan_name }}">
+    <input id="name" name="name" type="text" value="{{ plan.name }}">
 
     <label for="price">Valor:</label>
     <input id="price" name="price" type="text" value="{{ plan.price }}">

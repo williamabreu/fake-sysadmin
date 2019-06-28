@@ -1,5 +1,7 @@
+"""
+Definição de rotas do CRUD do AdminFinanceiro.
+"""
 from django.urls import path
-
 from . import views
 
 urlpatterns = [
