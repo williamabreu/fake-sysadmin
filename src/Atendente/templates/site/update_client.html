@@ -1,0 +1,37 @@
+{% extends 'site/base.html' %}
+
+{% block body %}
+  <h2>Atendente</h2>
+  <h1>Modificar cliente</h1>
+
+  <form method="POST" action="{% url 'update_client' client.id %}">
+    {% csrf_token %}
+    <label for="name">Nome completo:</label>
+    <input id="name" name="name" type="text" value="{{ client.person.name }}">
+
+    <label for="cpf">CPF:</label>
+    <input id="cpf" name="cpf" type="text" value="{{ client.person.cpf }}">
+    
+    <label for="rg">RG:</label>
+    <input id="rg" name="rg" type="text" value="{{ client.person.rg }}">
+
+    <label for="birthday">Data de nascimento:</label>
+    <input id="birthday" name="birthday" type="date" value="{{ client.person.birthday }}">
+
+    <label for="address">Endereço:</label>
+    <input id="address" name="address" type="text" value="{{ client.person.address }}">
+
+    <label for="plan">Plano contratado:</label>
+    <select id="plan" name="plan">
+      {% for plan in plans %}
+        {% if plan == client.contract.plan %}
+          <option value="{{ plan.id }}" selected>{{ plan.name }}</option>
+        {% else %}
+          <option value="{{ plan.id }}">{{ plan.name }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock body %}

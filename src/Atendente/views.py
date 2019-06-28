@@ -17,7 +17,7 @@ def create_client(request):
     if request.method == 'GET':
         plans = models.Plan.objects.all()
         return render(request, 'site/create_client.html', context={'plans': plans})
-    
+
     if request.method == 'POST':
         person = models.Person()
         person.name = request.POST['name']
@@ -26,12 +26,12 @@ def create_client(request):
         person.birthday = request.POST['birthday']
         person.address = request.POST['address']
         person.save()
-        
+
         install_date = models.Schedule()
         install_date.date = request.POST['install_date']
         install_date.hour = request.POST['install_hour']
         install_date.save()
-        
+
         contract = models.Contract()
         contract.subscription_date = datetime.now()
         contract.plan = models.Plan.objects.get(id=int(request.POST['plan']))
@@ -42,7 +42,7 @@ def create_client(request):
         client.install_date = install_date
         client.contract = contract
         client.save()
-        
+
         return redirect('create_client')
 
 
@@ -56,3 +56,11 @@ def list_all_clients(request):
     if request.method == 'GET':
         clients = models.Client.objects.all()
         return render(request, 'site/list_all_clients.html', context={'clients': clients})
+
+
+def update_client(request, id):
+    client = models.Client.objects.get(id=id)
+    
+    if request.method == 'GET':
+        plans = models.Plan.objects.all()
+        return render(request, 'site/update_client.html', context={'client': client, 'plans': plans})

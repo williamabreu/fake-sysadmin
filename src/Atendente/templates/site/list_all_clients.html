@@ -1,8 +1,8 @@
 {% extends 'site/base.html' %}
 
 {% block body %}
-<h2>Atendente</h2>
-<h1>Clientes</h1>
+  <h2>Atendente</h2>
+  <h1>Clientes</h1>
 
   <a href="{% url 'create_client' %}">Cadastrar Novo Cliente</a>
 
@@ -15,11 +15,7 @@
       <tr>
         <td>{{ client.person.name }}</td>
         <td>{{ client.person.cpf }}</td>
-        {% comment %}
-          <td><a href="{% url 'update_client' client.id %}">
-            Editar dados cadastrais
-          </a></td>
-        {% endcomment %}
+        <td><a href="{% url 'update_client' client.id %}">Editar dados cadastrais</a></td>
       </tr>
     {% endfor %}
   </table>
