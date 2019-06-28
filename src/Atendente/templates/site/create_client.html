@@ -1,0 +1,41 @@
+{% extends 'site/base.html' %}
+
+{% block body %}
+  <h2>Atendente</h2>
+  <h1>Cadastrar cliente</h1>
+
+  <form method="POST" action="{% url 'create_client' %}">
+    {% csrf_token %}
+    <label for="name">Nome completo:</label>
+    <input id="name" name="name" type="text">
+
+    <label for="cpf">CPF:</label>
+    <input id="cpf" name="cpf" type="text">
+    
+    <label for="rg">RG:</label>
+    <input id="rg" name="rg" type="text">
+
+    <label for="birthday">Data de nascimento:</label>
+    <input id="birthday" name="birthday" type="date">
+
+    <label for="address">Endereço:</label>
+    <input id="address" name="address" type="text">
+
+    <label for="plan">Plano contratado:</label>
+    <select id="plan" name="plan">
+      {% for plan in plans %}
+        <option value="{{ plan.id }}">{{ plan.name }}</option>
+      {% endfor %}
+    </select>
+
+    <h2>Agendar instalação</h2>
+
+    <label for="install_date">Data:</label>
+    <input id="install_date" name="install_date" type="date">
+
+    <label for="install_hour">Hora:</label>
+    <input id="install_hour" name="install_hour" type="text">
+
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock body %}
