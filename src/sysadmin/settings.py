@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Base.apps.BaseConfig',
     'AdminFinanceiro.apps.AdminfinanceiroConfig',
+    'Atendente.apps.AtendenteConfig',
 ]
 
 MIDDLEWARE = [
