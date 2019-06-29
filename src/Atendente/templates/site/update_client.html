@@ -16,7 +16,7 @@
     <input id="rg" name="rg" type="text" value="{{ client.person.rg }}">
 
     <label for="birthday">Data de nascimento:</label>
-    <input id="birthday" name="birthday" type="date" value="{{ client.person.birthday }}">
+    <input id="birthday" name="birthday" type="date" value="{{ client.person.birthday | date:'Y-m-d' }}">
 
     <label for="address">Endereço:</label>
     <input id="address" name="address" type="text" value="{{ client.person.address }}">
