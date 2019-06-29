@@ -59,6 +59,13 @@ def list_all_clients(request):
 
 
 def update_client(request, id):
+    """
+    Modifica dados do cliente cadastrados na base de dados (UPDATE).
+
+    :param request: Requisição HTTP processada do Django
+    :param id: Chave no banco de dados do cliente desejado
+    :return: Página HTML de modificação do cliente
+    """
     client = models.Client.objects.get(id=id)
     
     if request.method == 'GET':
@@ -66,14 +73,24 @@ def update_client(request, id):
         return render(request, 'site/update_client.html', context={'client': client, 'plans': plans})
 
     if request.method == 'POST':
-        contract = models.Contract()
-        contract.subscription_date = datetime.now()
-        contract.plan = models.Plan.objects.get(id=int(request.POST['plan']))
-        contract.save()
+        posted_plan_id = int(request.POST['plan'])
+        
+        if posted_plan_id != client.contract.plan.id:
+            # Altera o plano de assinatura
+            contract = models.Contract()
+            contract.subscription_date = datetime.now()
+            contract.plan = models.Plan.objects.get(id=posted_plan_id)
+            contract.save()
 
-        client.contract.delete()
-
-        client.contract = contract
-        client.save()
+            client.contract.delete()
+            client.contract = contract
+            client.save()
+        
+        client.person.name = request.POST['name']
+        client.person.cpf = request.POST['cpf']
+        client.person.rg = request.POST['rg']
+        client.person.birthday = request.POST['birthday']
+        client.person.address = request.POST['address']
+        client.person.save()
 
         return redirect('update_client', id=id)
