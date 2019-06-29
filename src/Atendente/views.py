@@ -94,3 +94,17 @@ def update_client(request, id):
         client.person.save()
 
         return redirect('update_client', id=id)
+
+def delete_client_subscription(request, id):
+    """
+    Cancela a assinatura de um cliente (DELETE).
+
+    :param request: Requisição HTTP processada do Django
+    :param id: Chave no banco de dados do cliente desejado
+    :return: Resposta HTTP de conclusão da operação
+    """
+    if request.method == 'GET':
+        client = models.Client.objects.get(id=id)
+        client.contract.delete()
+        client.person.delete()
+        return HttpResponse('Assinatura do cliente {} cancelada.'.format(client.person.name))
