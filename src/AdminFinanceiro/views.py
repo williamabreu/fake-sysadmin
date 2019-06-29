@@ -38,7 +38,7 @@ def list_all_plans(request):
 
 def update_plan(request, id):
     """
-    Lista todos os Planos de Assinatura cadastrados na base de dados (UPDATE).
+    Modifica um Plano de Assinatura cadastrado na base de dados (UPDATE).
 
     :param request: Requisição HTTP processada do Django
     :param id: Chave no banco de dados do plano desejado
@@ -62,7 +62,7 @@ def delete_plan(request, id):
 
     :param request: Requisição HTTP processada do Django
     :param id: Chave no banco de dados do plano desejado
-    :return: Página HTML de modificação do plano
+    :return: Resposta HTTP de conclusão da operação
     """
     if request.method == 'GET':
         plan = models.Plan.objects.get(id=id)
