@@ -30,6 +30,8 @@ Sistema integrado para gerência de provedor de internet
      |
      ├─── Atendente        # Contém código-fonte de implementação do software
      |
+     ├─── Base             # Contém código-fonte de implementação do software
+     |
      └─── sysadmin         # Contém código-fonte de configuração do framework
 ```
 
