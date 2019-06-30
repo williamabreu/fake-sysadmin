@@ -1,39 +1,80 @@
 {% extends 'site/base.html' %}
 
+{% block user_title %}
+  Atendente
+{% endblock user_title %}
+
+{% block frame_title %}
+  Modificar cliente
+{% endblock frame_title %}
+
 {% block body %}
-  <h2>Atendente</h2>
-  <h1>Modificar cliente</h1>
-
-  <form method="POST" action="{% url 'update_client' client.id %}">
+<form class="mt-4" method="POST" action="{% url 'update_client' client.id %}">
     {% csrf_token %}
-    <label for="name">Nome completo:</label>
-    <input id="name" name="name" type="text" value="{{ client.person.name }}">
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="name">Nome completo:</label>
+      <div class="col-md-6">
+        <input class="form-control" id="name" name="name" type="text" value="{{ client.person.name }}">
+      </div>
+    </div>
 
-    <label for="cpf">CPF:</label>
-    <input id="cpf" name="cpf" type="text" value="{{ client.person.cpf }}">
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="cpf">CPF:</label>
+      <div class="col-md-6">
+        <input class="form-control" id="cpf" name="cpf" type="text" value="{{ client.person.cpf }}">
+      </div>
+    </div>
     
-    <label for="rg">RG:</label>
-    <input id="rg" name="rg" type="text" value="{{ client.person.rg }}">
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="rg">RG:</label>
+      <div class="col-md-6">
+        <input class="form-control" id="rg" name="rg" type="text" value="{{ client.person.rg }}">
+      </div>
+    </div>
 
-    <label for="birthday">Data de nascimento:</label>
-    <input id="birthday" name="birthday" type="date" value="{{ client.person.birthday | date:'Y-m-d' }}">
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="birthday">Data de nascimento:</label>
+      <div class="col-md-6">
+        <input class="form-control" id="birthday" name="birthday" type="date" value="{{ client.person.birthday | date:'Y-m-d' }}">
+      </div>
+    </div>
 
-    <label for="address">Endereço:</label>
-    <input id="address" name="address" type="text" value="{{ client.person.address }}">
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="address">Endereço:</label>
+      <div class="col-md-6">
+        <input class="form-control" id="address" name="address" type="text" value="{{ client.person.address }}">
+      </div>
+    </div>
 
-    <label for="plan">Plano contratado:</label>
-    <select id="plan" name="plan">
-      {% for plan in plans %}
-        {% if plan == client.contract.plan %}
-          <option value="{{ plan.id }}" selected>{{ plan.name }}</option>
-        {% else %}
-          <option value="{{ plan.id }}">{{ plan.name }}</option>
-        {% endif %}
-      {% endfor %}
-    </select>
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="plan">Plano contratado:</label>
+      <div class="col-md-6">
+        <select class="custom-select" id="plan" name="plan">
+          {% for plan in plans %}
+            {% if plan == client.contract.plan %}
+              <option value="{{ plan.id }}" selected>{{ plan.name }}</option>
+            {% else %}
+              <option value="{{ plan.id }}">{{ plan.name }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+    </div>
 
-    <button type="submit">Salvar</button>
+    <div class="form-group row">
+      <div class="col-md-6">
+        <span></span>
+      </div>
+      <div class="col-md-4">
+        <p class="text-right mt-5">
+          <a class="btn btn-danger" href="{% url 'cancel_subscription' client.id %}">Cancelar assinatura</a>
+        </p>
+      </div>
+      <div class="col-md-2">
+        <p class="text-left mt-5">
+          <button class="btn btn-primary" type="submit">Salvar</button>
+        </p>
+      </div>
+    </div>
   </form>
-
-  <a href="{% url 'cancel_subscription' client.id %}">Cancelar assinatura</a>
 {% endblock body %}
