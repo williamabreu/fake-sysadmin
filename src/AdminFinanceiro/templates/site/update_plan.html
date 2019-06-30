@@ -1,17 +1,36 @@
 {% extends 'site/base.html' %}
 
+{% block user_title %}
+  Administrador Financeiro
+{% endblock user_title %}
+
+{% block frame_title %}
+  Plano de assinatura
+{% endblock frame_title %}
+
 {% block body %}
-  <h2>Administrador Financeiro</h2>
-  <h1>Plano de assinatura</h1>
-
-  <form method="POST" action="{% url 'update_plan' plan.id %}">
+<form class="mt-4" method="POST" action="{% url 'update_plan' plan.id %}">
     {% csrf_token %}
-    <label for="name">Nome:</label>
-    <input id="name" name="name" type="text" value="{{ plan.name }}">
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="name">Nome:</label>
+      <div class="col-md-6">
+        <input class="form-control" id="name" name="name" type="text" value="{{ plan.name }}">
+      </div>
+    </div>
 
-    <label for="price">Valor:</label>
-    <input id="price" name="price" type="text" value="{{ plan.price }}">
-
-    <button type="submit">Salvar</button>
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="price">Valor:</label>
+      <div class="col-md-6">
+        <input class="form-control" id="price" name="price" type="text" value="{{ plan.price }}">
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <div class="col-md-12">
+        <p class="text-right mt-5">
+          <button class="btn btn-primary" type="submit">Salvar</button>
+        </p>
+      </div>
+    </div>
   </form>
 {% endblock body %}
