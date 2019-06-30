@@ -1,6 +1,51 @@
 # Casos de Teste
 
 
+## Cadastrar Plano
+
+- AÇÃO:
+    ```
+    - Preencher Nome e Valor
+    - Clicar em salvar
+    ```
+
+- RESULTADO ESPERADO:
+    ```
+    - Novo registro adicionado na tabela Plan
+    ```
+
+---------------------------------------
+
+## Modificar Plano
+
+- AÇÃO:
+    ```
+    - Alterar Nome e/ou Valor
+    - Clicar em salvar
+    ```
+
+- RESULTADO ESPERADO:
+    ```
+    - Se algum dos valores for alterado...
+        - Novo registro adicionado na tabela Plan
+    - Senão...
+        - Nenhuma alteração
+    ```
+
+---------------------------------------
+
+## Excluir Plano
+
+- AÇÃO:
+    ```
+    - Clicar em excluir
+    ```
+
+- RESULTADO ESPERADO:
+    ```
+    - Registro removido da tabela Plan
+    ```
+
 ## Cadastrar Cliente
 
 - AÇÃO:
