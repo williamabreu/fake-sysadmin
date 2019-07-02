@@ -6,6 +6,9 @@ from datetime import datetime
 
 
 def create_client(name, cpf, rg, birthday, address, install_date, install_hour, plan_id):
+    """
+    Cadastra um Cliente na base de dados (CREATE).
+    """
     person = models.Person()
     person.name = name
     person.cpf = cpf
@@ -32,10 +35,16 @@ def create_client(name, cpf, rg, birthday, address, install_date, install_hour, 
 
 
 def list_all_clients():
+    """
+    Lista todos os Clientes cadastrados na base de dados (READ).
+    """
     return models.Client.objects.all()
 
 
 def update_client(client, posted_plan_id, name, cpf, rg, birthday, address):
+    """
+    Modifica dados do cliente cadastrados na base de dados (UPDATE).
+    """
     if posted_plan_id != client.contract.plan.id:
         # Altera o plano de assinatura
         contract = models.Contract()
@@ -56,5 +65,8 @@ def update_client(client, posted_plan_id, name, cpf, rg, birthday, address):
 
 
 def delete_client_subscription(client):
+    """
+    Cancela a assinatura de um cliente (DELETE).
+    """
     client.contract.delete()
     client.person.delete()
