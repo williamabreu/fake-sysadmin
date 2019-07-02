@@ -46,6 +46,8 @@
     - Registro removido da tabela Plan
     ```
 
+---------------------------------------
+
 ## Cadastrar Cliente
 
 - AÇÃO:
