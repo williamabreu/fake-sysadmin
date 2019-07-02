@@ -67,4 +67,4 @@ def delete_plan(request, id):
     if request.method == 'GET':
         plan = models.Plan.objects.get(id=id)
         plan.delete()
-        return HttpResponse('Plano {} excluído.'.format(plan.name))
+        return HttpResponse(f'Plano {plan.name} excluído.')
